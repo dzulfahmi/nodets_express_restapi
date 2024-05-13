@@ -18,7 +18,13 @@ router.use(cors);
 router.use(express.urlencoded({ extended: false }));
 /** Takes care of JSON data */
 router.use(express.json());
-
+/** Database */
+const db = require('./models');
+// db.sequelize.sync();
+// for drop and sync db alias reset db (all data will removed)
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and re-sync db.");
+});
 
 /** Error handling */
 router.use((req, res, next) => {
