@@ -5,6 +5,8 @@ import morgan from 'morgan';
 
 import cors from './middleware/CorsMiddleware';
 
+import contactRoutes from './routes/contact.route';
+
 dotenv.config();
 
 console.log('isi dotenv', process.env.APP_NAME)
@@ -25,6 +27,9 @@ const db = require('./models');
 db.sequelize.sync({ force: true }).then(() => {
   console.log("Drop and re-sync db.");
 });
+
+/** Routes */
+router.use('/api/contact', contactRoutes);
 
 /** Error handling */
 router.use((req, res, next) => {
