@@ -5,7 +5,7 @@ import morgan from 'morgan';
 
 import cors from './middleware/CorsMiddleware';
 
-import contactRoutes from './routes/contact.route';
+import contactRoutes from './routes/contact.routes';
 
 dotenv.config();
 
