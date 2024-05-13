@@ -1,0 +1,28 @@
+{
+  "name": "talentgrowthrestapi",
+  "version": "1.0.0",
+  "description": "Talent Growth rest api f\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[D\u001b[D\u001b[Dtest rest api by Fitra Zul Fahmi",
+  "main": "server.ts",
+  "scripts": {
+    "dev": "nodemon src/server.ts",
+    "build": "rm -rf build/ && prettier --write src/ && tsc"
+  },
+  "keywords": [
+    "talentgrowth"
+  ],
+  "author": "Fitra Zul Fahmi",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
