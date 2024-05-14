@@ -26,7 +26,7 @@ const createContact = (req: any, res: any) => {
   // Save Product in the database
   ContactModel.create(payload)
     .then((data: any) => {
-      const response = getResponseFormat(true, `Data berhasil disimpan.`, data, null, 200)
+      const response = getResponseFormat(true, `Data saved successfully.`, data, null, 200)
       res.status(200).send(response);
     })
     .catch((err: any) => {
@@ -51,7 +51,7 @@ const findAllContact = (req: any, res: any) => {
   })
     .then((data: any) => {
       const respData = getPagingData(data, page, limit);
-      const response = getResponseFormat(true, `Data berhasil diperoleh.`, respData, null)
+      const response = getResponseFormat(true, `Data retrieved successfully.`, respData, null)
       res.status(200).send(response);
     })
     .catch((err: any) => {
@@ -67,7 +67,7 @@ const findOneContact = (req: any, res: any) => {
   ContactModel.findOne({where: {id: id}})
     .then((data: any) => {
       if (data) {
-        const response = getResponseFormat(true, `Data berhasil diperoleh.`, data, null)
+        const response = getResponseFormat(true, `Data retrieved successfully.`, data, null)
         res.status(200).send(response);
       } else {
         const response = getResponseFormat(false, `Cannot find data with id=${id}.`, null, null)

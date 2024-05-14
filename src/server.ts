@@ -22,11 +22,11 @@ router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 /** Database */
 const db = require('./models');
-// db.sequelize.sync();
+db.sequelize.sync();
 // for drop and sync db alias reset db (all data will removed)
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-});
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
 
 /** Routes */
 router.use('/api/contact', contactRoutes);
