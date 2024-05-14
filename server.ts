@@ -3,9 +3,9 @@ import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import morgan from 'morgan';
 
-import cors from './middleware/CorsMiddleware';
+import cors from './src/middleware/CorsMiddleware';
 
-import contactRoutes from './routes/contact.routes';
+import contactRoutes from './src/routes/contact.routes';
 
 dotenv.config();
 
@@ -21,7 +21,7 @@ router.use(express.urlencoded({ extended: false }));
 /** Takes care of JSON data */
 router.use(express.json());
 /** Database */
-const db = require('./models');
+const db = require('./src/models');
 db.sequelize.sync();
 // for drop and sync db alias reset db (all data will removed)
 // db.sequelize.sync({ force: true }).then(() => {
