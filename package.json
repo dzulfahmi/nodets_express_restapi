@@ -4,8 +4,10 @@
   "description": "Talent Growth rest api f\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[1;5D\u001b[D\u001b[D\u001b[Dtest rest api by Fitra Zul Fahmi",
   "main": "server.ts",
   "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
     "dev": "nodemon src/server.ts",
-    "build": "rm -rf build/ && prettier --write src/ && tsc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "talentgrowth"
