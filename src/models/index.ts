@@ -1,8 +1,11 @@
 const dbConfig = require("../config/db.config");
 const Sequelize = require("sequelize");
+const mysql2 = require('mysql2')
+
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
+  dialectModule: mysql2,
   operatorsAliases: false,
   pool: {
     max: dbConfig.pool.max,
